@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class Patient {
     private String nomPatient;
     private String prenomPatient;
     private Date dateNaiss;
-    private List<Ticket> tickets;
+    private List<Ticket> tickets = new ArrayList<Ticket>();
 
     public Patient() {
     }

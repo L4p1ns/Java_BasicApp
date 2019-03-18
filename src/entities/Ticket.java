@@ -9,12 +9,11 @@ public class Ticket {
     private Double montant;
     private Patient patient;
 
-    public Ticket(Long idTicket, Date datePrise, String specialiteMed, Double montant, Patient patient) {
+    public Ticket(Long idTicket, Date datePrise, String specialiteMed, Double montant) {
         this.idTicket = idTicket;
         this.datePrise = datePrise;
         this.specialiteMed = specialiteMed;
         this.montant = montant;
-        this.patient = patient;
     }
 
     public Ticket() {
