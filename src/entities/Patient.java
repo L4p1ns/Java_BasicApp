@@ -1,56 +1,24 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Patient {
-    private Long idPatient;
-    private String nomPatient;
-    private String prenomPatient;
-    private Date dateNaiss;
-    private List<Ticket> tickets = new ArrayList<Ticket>();
+public class Patient extends Personne {
+    private GroupeSanguin gs;
+    private List<Ticket> tickets;
 
-    public Patient() {
+    public Patient(String matricule, String nom, Date dateNaissance, String telephone, String sexe, GroupeSanguin gs, List<Ticket> tickets) {
+        super(matricule, nom, dateNaissance, telephone, sexe);
+        this.gs = gs;
+        this.tickets = tickets;
     }
 
-    public Patient(Long idPatient, String nomPatient, String prenomPatient, Date dateNaiss) {
-        this.idPatient = idPatient;
-        this.nomPatient = nomPatient;
-        this.prenomPatient = prenomPatient;
-        this.dateNaiss = dateNaiss;
+    public GroupeSanguin getGs() {
+        return gs;
     }
 
-    public Long getIdPatient() {
-        return idPatient;
-    }
-
-    public void setIdPatient(Long idPatient) {
-        this.idPatient = idPatient;
-    }
-
-    public String getNomPatient() {
-        return nomPatient;
-    }
-
-    public void setNomPatient(String nomPatient) {
-        this.nomPatient = nomPatient;
-    }
-
-    public String getPrenomPatient() {
-        return prenomPatient;
-    }
-
-    public void setPrenomPatient(String prenomPatient) {
-        this.prenomPatient = prenomPatient;
-    }
-
-    public Date getDateNaiss() {
-        return dateNaiss;
-    }
-
-    public void setDateNaiss(Date dateNaiss) {
-        this.dateNaiss = dateNaiss;
+    public void setGs(GroupeSanguin gs) {
+        this.gs = gs;
     }
 
     public List<Ticket> getTickets() {
@@ -59,16 +27,5 @@ public class Patient {
 
     public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
-    }
-
-    @Override
-    public String toString() {
-        return "Patient{" +
-                "idPatient=" + idPatient +
-                ", nomPatient='" + nomPatient + '\'' +
-                ", prenomPatient='" + prenomPatient + '\'' +
-                ", dateNaiss=" + dateNaiss +
-                ", tickets=" + tickets +
-                '}';
     }
 }

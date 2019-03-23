@@ -5,18 +5,19 @@ import java.util.Date;
 public class Ticket {
     private Long idTicket;
     private Date datePrise;
-    private String specialiteMed;
-    private Double montant;
+    private Specialite specialite;
     private Patient patient;
-
-    public Ticket(Long idTicket, Date datePrise, String specialiteMed, Double montant) {
-        this.idTicket = idTicket;
-        this.datePrise = datePrise;
-        this.specialiteMed = specialiteMed;
-        this.montant = montant;
-    }
+    private Caissier caissier;
 
     public Ticket() {
+    }
+
+    public Ticket(Long idTicket, Date datePrise, Specialite specialite, Patient patient, Caissier caissier) {
+        this.idTicket = idTicket;
+        this.datePrise = datePrise;
+        this.specialite = specialite;
+        this.patient = patient;
+        this.caissier = caissier;
     }
 
     public Long getIdTicket() {
@@ -35,20 +36,12 @@ public class Ticket {
         this.datePrise = datePrise;
     }
 
-    public String getSpecialiteMed() {
-        return specialiteMed;
+    public Specialite getspecialite() {
+        return specialite;
     }
 
-    public void setSpecialiteMed(String specialiteMed) {
-        this.specialiteMed = specialiteMed;
-    }
-
-    public Double getMontant() {
-        return montant;
-    }
-
-    public void setMontant(Double montant) {
-        this.montant = montant;
+    public void setspecialite(Specialite specialite) {
+        this.specialite = specialite;
     }
 
     public Patient getPatient() {
@@ -59,14 +52,11 @@ public class Ticket {
         this.patient = patient;
     }
 
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "idTicket=" + idTicket +
-                ", datePrise=" + datePrise +
-                ", specialiteMed='" + specialiteMed + '\'' +
-                ", montant=" + montant +
-                ", patient=" + patient +
-                '}';
+    public Caissier getCaissier() {
+        return caissier;
+    }
+
+    public void setCaissier(Caissier caissier) {
+        this.caissier = caissier;
     }
 }
